@@ -8,17 +8,22 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class RegisterActivity : AppCompatActivity() {
 
     private val mAuth = FirebaseAuth.getInstance()
+    lateinit var mDatabase : DatabaseReference
 
-    override fun OnCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         val registerBtn = findViewById<View>(R.id.registerButton) as Button
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
         registerBtn.setOnClickListener(View.OnClickListener {
             view -> register()
@@ -37,7 +42,10 @@ class RegisterActivity : AppCompatActivity() {
         if (!username.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener { task ->
                 if (task.isSuccessful) {
-
+                    val user = mAuth.currentUser
+                    val uid = user!!.uid
+                    mDatabase.child(uid).child("Username").setValue(username)
+                    Toast.makeText(this, "Registration successful...", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this, "(Un)expected error...", Toast.LENGTH_LONG).show()
                 }
