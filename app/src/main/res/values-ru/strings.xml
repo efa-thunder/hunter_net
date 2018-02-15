@@ -5,4 +5,6 @@
     <string name="buttonlogin">Войти</string>
     <string name="registerTextView">Регистрация</string>
     <string name="forgotTextView">Напомнить пароль</string>
+    <string name="usernameTextInput">Имя пользователя</string>
+    <string name="registerButton">Зарегистрироваться</string>
 </resources>
