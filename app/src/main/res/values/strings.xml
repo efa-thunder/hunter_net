@@ -3,7 +3,7 @@
     <string name="emailtext" translatable="false">Email</string>
     <string name="passwordtext">Password</string>
     <string name="buttonlogin">Login</string>
-    <string name="registerTextView" >Register</string>
+    <string name="registerTextView">Register</string>
     <string name="forgotTextView">Forgot password</string>
     <string name="usernameTextInput">Username</string>
     <string name="registerButton">Register</string>
