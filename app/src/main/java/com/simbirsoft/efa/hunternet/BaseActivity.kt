@@ -30,7 +30,7 @@ class BaseActivity : AppCompatActivity() {
             }
             override fun onDataChange(snapshot: DataSnapshot) {
                 val result = snapshot.child("Username").toString()
-                resultTxt.text = "Good day " + result
+                resultTxt.text = result
             }
         })
     }
