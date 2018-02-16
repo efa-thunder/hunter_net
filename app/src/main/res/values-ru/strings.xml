@@ -7,4 +7,6 @@
     <string name="forgotTextView">Напомнить пароль</string>
     <string name="usernameTextInput">Имя пользователя</string>
     <string name="registerButton">Зарегистрироваться</string>
+    <string name="resulttextView">Результат</string>
+    <string name="signOutMenu">Выйти</string>
 </resources>

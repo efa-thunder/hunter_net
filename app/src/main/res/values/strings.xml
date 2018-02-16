@@ -7,4 +7,6 @@
     <string name="forgotTextView">Forgot password</string>
     <string name="usernameTextInput">Username</string>
     <string name="registerButton">Register</string>
+    <string name="resulttextView">Result</string>
+    <string name="signOutMenu">Sign out</string>
 </resources>
